@@ -17,3 +17,8 @@
     dnf:
       name : httpd
       state: latest
+
+  - name: Start httpd service
+    service:
+      name: httpd
+      state: started 

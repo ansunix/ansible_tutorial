@@ -1,0 +1,11 @@
+git clone git@github.com:ansunix/ansible_tutorial.git
+
+git status
+
+git diff file_name
+
+git add filename (commit bundle)
+
+git commit -m "message in a bottle"
+
+git push origin main

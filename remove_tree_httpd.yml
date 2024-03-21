@@ -8,7 +8,7 @@
     dnf:
       update_cache: yes
 
-  - name: Install Tree package
+  - name: Remove Tree package
     dnf:
       name: tree
       state: absent 
@@ -18,7 +18,7 @@
       name: httpd
       state: stopped
 
-  - name: Install or Update httpd
+  - name: Remove httpd
     dnf:
       name : httpd
       state: absent

@@ -1,0 +1,24 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: Update dnf repository cache
+    dnf:
+      update_cache: yes
+
+  - name: Install Tree package
+    dnf:
+      name: tree
+      state: absent 
+
+  - name: Stop httpd services
+    service:
+      name: httpd
+      state: stopped
+
+  - name: Install or Update httpd
+    dnf:
+      name : httpd
+      state: absent

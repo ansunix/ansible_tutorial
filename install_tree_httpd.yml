@@ -5,20 +5,22 @@
   tasks:
 
   - name: Update dnf repository cache
-    dnf:
+    ansible.builtin.dnf:
       update_cache: yes
 
   - name: Install Tree package
-    dnf:
+    ansible.builtin.dnf:
       name: tree
       state: latest 
+    when: ansible_distribution == "Fedora" 
 
   - name: Install or Update httpd
-    dnf:
+    ansible.builtin.dnf:
       name : httpd
       state: latest
+    when: ansible_distribution == "Fedora" 
 
   - name: Start httpd service
-    service:
+    ansible.builtin.service:
       name: httpd
       state: started 

@@ -18,7 +18,7 @@
     ansible.builtin.dnf:
       name : httpd
       state: latest
-    when: ansible_distribution == "Fedora" 
+    when: ansible_distribution == "Ubuntu" 
 
   - name: Start httpd service
     ansible.builtin.service:

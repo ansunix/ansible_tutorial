@@ -11,15 +11,22 @@
   - name: Remove Tree package
     ansible.builtin.dnf:
       name: tree
-      state: absent 
+      state: absent
 
   - name: Stop httpd services
     ansible.builtin.service:
       name: httpd
       state: stopped
+    when: ansible_distribution == "Fedora" and ansible_distribution_version == "39"
 
   - name: Remove httpd
     ansible.builtin.dnf:
-      name : httpd
+      name: httpd
       state: absent
-    when: ansible_distribution == "Fedora"
+    when: ansible_distribution == "Fedora" and ansible_distribution_version == "39"
+
+  - name: Remove nano editor
+    ansible.builtin.dnf:
+      name: nano
+      state: absent
+    when: ansible_distribution == "Fedora" and ansible_distribution_version == "38"

@@ -29,4 +29,4 @@
     ansible.builtin.dnf:
       name: nano
       state: latest
-    when: ansible_distribtion == "Fedora" and ansible_distribution_version == "38"
+    when: ansible_distribution == "Fedora" and ansible_distribution_version == "38"

@@ -25,3 +25,4 @@
         - tree
       state: absent
     when: ansible_distribution == "Fedora" and ansible_distribution_version == "38"
+

@@ -1,0 +1,52 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: Install updates (Fedora)
+    ansible.builtin.dnf:
+      update_only: yes
+      update_cache: yes
+    when: ansible_distribution == "Fedora"
+
+- hosts: web_server
+  become: true
+  tasks:
+
+  - name: Install or Update httpd and tree for Web server.
+    ansible.builtin.dnf:
+      name:
+        - httpd
+        - tree
+      state: latest
+    when: ansible_distribution == "Fedora" and ansible_distribution_version == "39"
+
+  - name: Start httpd service
+    service:
+      name: httpd
+      state: started
+      enabled: yes
+    when: ansible_distribution == "Fedora" and ansible_distribution_version == "39"
+
+- hosts: file_server
+  become: true
+  tasks:
+
+  - name: Install unzip package for File Server.
+    ansible.builtin.dnf:
+      name:
+        - upzip
+      state: present
+
+- hosts: app_server
+  become: true
+  tasks:
+
+  - name: Install nano and tree on Application server.
+    ansible.builtin.dnf:
+      name:
+        - nano
+        - tree
+      state: latest
+    when: ansible_distribution == "Fedora" and ansible_distribution_version == "38"

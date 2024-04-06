@@ -16,7 +16,7 @@
   tasks:
 
   - name: Install httpd and Tree for Web server Fedora 39.
-    tags: http,tree,fedora39
+    tags: webserver,tree,fedora39
     ansible.builtin.dnf:
       name:
         - httpd

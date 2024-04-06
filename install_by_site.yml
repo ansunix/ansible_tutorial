@@ -36,7 +36,7 @@
   tasks:
 
   - name: Install unzip package for File Server Fedora 39.
-    tags: fserver,unzip
+    tags: fileserver,unzip
     ansible.builtin.dnf:
       name:
         - upzip

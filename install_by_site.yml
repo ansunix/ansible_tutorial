@@ -5,6 +5,7 @@
   tasks:
 
   - name: Install updates (Fedora)
+    tags: always
     ansible.builtin.dnf:
       update_only: yes
       update_cache: yes
@@ -14,7 +15,8 @@
   become: true
   tasks:
 
-  - name: Install or Update httpd and tree for Web server.
+  - name: Install httpd and Tree for Web server Fedora 39.
+    tags: http,tree,fedora39
     ansible.builtin.dnf:
       name:
         - httpd
@@ -33,7 +35,8 @@
   become: true
   tasks:
 
-  - name: Install unzip package for File Server.
+  - name: Install unzip package for File Server Fedora 39.
+    tags: fserver,unzip
     ansible.builtin.dnf:
       name:
         - upzip
@@ -43,7 +46,8 @@
   become: true
   tasks:
 
-  - name: Install nano and tree on Application server.
+  - name: Install nano and tree on Application server Fedora 38.
+    tags: appserver,nano,tree
     ansible.builtin.dnf:
       name:
         - nano

@@ -35,7 +35,7 @@
 
   - name: Start httpd service
     tags: webserver,tree,fedora39
-    service:
+    ansible.builtin.service:
       name: httpd
       state: started
       enabled: yes

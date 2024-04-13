@@ -55,7 +55,7 @@
     ansible.builtin.service:
       name: httpd
       state: restarted
-   when: linehttpd.changed 
+    when: linehttpd.changed
 
 - hosts: file_server
   become: true

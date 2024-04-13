@@ -41,6 +41,14 @@
       enabled: yes
     when: ansible_distribution == "Fedora" and ansible_distribution_version == "39"
 
+  - name: Change ServerAdmin email address in httpd file."
+    tags: webserver,tree,fedora39
+    ansible.builtin.lineinfile:
+      path: /etc/httpd/conf/httpd.conf
+      regexp: '^ServerAdmin'
+      line: ServerAdmin someone@somewhere.com
+    when: ansible_distribution == "Fedora" and ansible_distribution_version == "39"
+
 - hosts: file_server
   become: true
   tasks:

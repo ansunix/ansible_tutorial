@@ -48,6 +48,14 @@
       regexp: '^ServerAdmin'
       line: ServerAdmin someone@somewhere.com
     when: ansible_distribution == "Fedora" and ansible_distribution_version == "39"
+    register: linehttpd
+
+  - name: Restart httpd services if changes to httpd file
+    tags: webserver,tree,httpd
+    ansible.builtin.service:
+      name: httpd
+      state: restarted
+   when: linehttpd.changed 
 
 - hosts: file_server
   become: true

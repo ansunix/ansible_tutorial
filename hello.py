@@ -9,7 +9,7 @@ name = input ("what is your name? ")
 #print ("Hello," , name )
 #print ("Believing is Seeing")
 
-# Say hello and do not go to a new line by using the end perameter, to only new line after second print function.
+# Say hello and do not new line by default by passing the null argument to the end parameter.
 print ("Hello, " , end="")
 print (name)
 print ("Will it into existence")

@@ -1,6 +1,6 @@
 
 # Ask user for there name.
-name = input ("what is your name? ")
+name = input ("What is your name? ")
 
 # Say hello then concatenate with the plus operator with the value of name into a string.
 #print ("Hello, " + name )
@@ -15,5 +15,6 @@ This is also a comment, anything between the triple-double quotes.
 Say hello and do not new line by default by passing the null argument to the end parameter.
 """
 print ("Hello, " , end="")
-print (name, sep='!', end='')
-print ("Success is a process", end='\n')
+print (name,  sep=' ', end=' (.)(.)\n')
+print ("Success is a process!")
+print (end='\n')

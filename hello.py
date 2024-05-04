@@ -15,5 +15,5 @@ This is also a comment, anything between the triple-double quotes.
 Say hello and do not new line by default by passing the null argument to the end parameter.
 """
 print ("Hello, " , end="")
-print (name)
-print ("Success is a process")
+print (name, sep='!', end='')
+print ("Success is a process", end='\n')

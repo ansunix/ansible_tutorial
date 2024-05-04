@@ -1,3 +1,4 @@
+
 # Ask user for there name.
 name = input ("what is your name? ")
 
@@ -7,9 +8,9 @@ name = input ("what is your name? ")
 
 # Say hello to user with a coma to add multipule variables with spaces added by using coma operator.
 #print ("Hello," , name )
-#print ("Believing is Seeing")
+#print ("Success is a process")
 
 # Say hello and do not new line by default by passing the null argument to the end parameter.
 print ("Hello, " , end="")
 print (name)
-print ("Will it into existence")
+print ("Success is a process")

@@ -19,7 +19,7 @@
     tags: always
     ansible.builtin.user:
       name: donna
-      groups: wheel
+      groups: webgrp
 
 - hosts: web_server
   become: true

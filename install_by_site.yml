@@ -11,6 +11,16 @@
       update_cache: yes
     when: ansible_distribution == "Fedora"
 
+- hosts: all
+  become: true
+  tasks:
+
+  - name: Add user Donna to all machines
+    tags: always
+    ansible.builtin.user:
+      name: donna
+      groups: wheel
+
 - hosts: web_server
   become: true
   tasks:
